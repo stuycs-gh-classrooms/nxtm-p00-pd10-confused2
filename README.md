@@ -31,11 +31,13 @@ All projects will require the following:
 ### Forumla
 What is the formula for your force? Including descriptions/definitions for the symbols. (You may include a picture of the formula if it is not easily typed.)
 
+F_E = kq1q2/r^2
+
 YOUR ANSWER HERE
 
 ### Custom Force
 - What information that is already present in the `Orb` or `OrbNode` classes does this force use?
-  - YOUR ANSWER HERE
+  - The existing orbs affect each other.
 
 - Does this force require any new constants, if so what are they and what values will you try initially?
   - YOUR ANSWER HERE
