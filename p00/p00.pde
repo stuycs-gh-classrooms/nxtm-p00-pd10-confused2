@@ -1,92 +1,64 @@
 //Ashley Li & Sarah Kim
-int NUM_ORBS = 10;
-int MIN_SIZE = 10;
-int MAX_SIZE = 60;
-float MIN_MASS = 10;
-float MAX_MASS = 100;
-float G_CONSTANT = 1;
-float D_COEF = 0.1;
-
-int SPRING_LENGTH = 50;
-float  SPRING_K = 0.005;
-
-int MOVING = 0;
-int GRAVITY = 1;
-int SPRINGFORCE = 2;
-int DRAGF = 3;
-int STICKYF = 4;
-int COMBINATION = 5;
-boolean[] toggles = new boolean[5];
-String[] modes = {"gravity", "spring force", "drag", "sticky force", "combination"};
-
-OrbNode o0, o1, o2, o3;
+boolean gravity;
+boolean spring;
+boolean drag;
+boolean sticky;
+boolean combination;
+boolean moving;
+boolean boucing;
 
 void setup() {
- size(800, 800); 
- makeOrbs();
+  size(800, 800);
+  gravity = true;
 }
-
-void makeOrbs() {
-  o0 = new OrbNode();
-  o1 = new OrbNode();
-  o2 = new OrbNode();
-  o3 = new OrbNode();
-  
-  o0.next = o1;
-  o1.previous = o0;
-  o1.next = o2;
-  o2.previous = o1;
-  o2.next = o3;
-  o3.previous = o2;
-}// we should try to automate this later
 
 void draw() {
   toggleDisplay();
 }
 
 void keyPressed() {
-  if (key == ' ') { toggles[MOVING] = !toggles[MOVING]; }
-  if (key == '1') { toggles[GRAVITY] = !toggles[GRAVITY]; }
-  if (key == '2') { toggles[DRAGF] = !toggles[DRAGF]; }
-  if (key == '3') { toggles[STICKYF] = !toggles[STICKYF]; }
-  if (key == 'r') { makeOrbs(); }
-}
+  if (key == ' ') {
+    println(!gravity);
+  }
+
+  }
 
 void toggleDisplay() {
   int txtSz = 27;
-  float a = textWidth("gravity")+4;
-  float b = textWidth("spring force")+4;
-  float c = textWidth("drag")+4;
-  float d = textWidth("sticky force")+4;
-  float e = textWidth("combination")+4;
-  
-  /**
-  for (int m=0; m<toggles.length; m++) {
-    //set box color
-    if (toggles[m]) { fill(0, 255, 0); }
-    else { fill(255, 0, 0); }
-  **/
-  
-  /**
-    float w = textWidth(modes[m]);
-    rect(a, 0, w, t);
-  **/
-  
-  //we need to automate the toggle buttons + color change.
-  
+  //creating strings
+  String stra = "gravity";
+  String strb = "spring";
+  String strc = "drag";
+  String strd = "sticky";
+  String stre = "combination";
+  String strf = "moving";
+  String strg = "bouncing";
+  //calculating text width
+  float a = textWidth(stra)+4; //gravity
+  float b = textWidth(strb)+4; //spring
+  float c = textWidth(strc)+4; //drag
+  float d = textWidth(strd)+4; //custom (sticky)
+  float e = textWidth(stre)+4; //combination
+  float f = textWidth(strf)+4; //custom (sticky)
+  float g = textWidth(strg)+4; //combination
+
   fill(255);
   rect(0, 0, a, txtSz); //gravity
-  rect(a, 0, b, txtSz); //spring force
+  rect(a, 0, b, txtSz); //spring
   rect(a+b, 0, c, txtSz); //drag
-  rect(a+b+c, 0, d, txtSz); //custom force
-  rect(a+b+c+d, 0, e, txtSz); //combination      
+  rect(a+b+c, 0, d, txtSz); //custom (sticky)
+  rect(a+b+c+d, 0, e, txtSz); //combination
+  rect(a+b+c+d+e, 0, f, txtSz); //combination
+  rect(a+b+c+d+e+f, 0, g, txtSz); //combination
 
   textSize(txtSz);
   textAlign(LEFT, TOP);
   fill(0);
-  text("gravity", 0+2, 0);
-  text("spring force", a+2, 0);
-  text("drag", a+b+2, 0);
-  text("sticky force", a+b+c+2, 0);
-  text("combination", a+b+c+d+2, 0);
+  text(stra, 0+2, 0);
+  text(strb, a+2, 0);
+  text(strc, a+b+2, 0);
+  text(strd, a+b+c+2, 0);
+  text(stre, a+b+c+d+2, 0);
+  text(strf, a+b+c+d+e+2, 0);
+  text(strg, a+b+c+d+e+f+2, 0);
 }
