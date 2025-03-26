@@ -31,11 +31,11 @@ All projects will require the following:
 ### Forumla
 What is the formula for your force? Including descriptions/definitions for the symbols. (You may include a picture of the formula if it is not easily typed.)
 
-F<sub>E</sub> = frac{kq<sub>1</sub>q<sub>2</sub>}{r<sup>2</sup>}
+F<sub>E</sub> = kq<sub>1</sub>q<sub>2</sub>/r<sup>2</sup>
 
 ### Custom Force
 - What information that is already present in the `Orb` or `OrbNode` classes does this force use?
-  - YOUR ANSWER HERE
+  - The distance between the center of the two orbs.
 
 - Does this force require any new constants, if so what are they and what values will you try initially?
   - The force needs friction, which is the reasn it "sticks" to a wall.
