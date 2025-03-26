@@ -26,16 +26,16 @@ All projects will require the following:
 ## Phase 0: Force Selection, Analysis & Plan
 ---------- 
 
-#### Custom Force: NAME OF YOUR FORCE
+#### Custom Force: Sticky Force
 
 ### Forumla
 What is the formula for your force? Including descriptions/definitions for the symbols. (You may include a picture of the formula if it is not easily typed.)
 
-F_E = kq1q2/r^2
+F<sub>E</sub> = kq<sub>1</sub>q<sub>2</sub>/r<sup>2</sup>
 
 ### Custom Force
 - What information that is already present in the `Orb` or `OrbNode` classes does this force use?
-  - YOUR ANSWER HERE
+  - The distance between the center of the two orbs.
 
 - Does this force require any new constants, if so what are they and what values will you try initially?
   - The force needs friction, which is the reasn it "sticks" to a wall.
