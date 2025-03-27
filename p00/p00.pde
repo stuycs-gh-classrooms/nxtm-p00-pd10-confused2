@@ -5,11 +5,17 @@ boolean drag;
 boolean sticky;
 boolean combination;
 boolean moving;
-boolean boucing;
+boolean bouncing;
 
 void setup() {
   size(800, 800);
-  gravity = true;
+  gravity = false;
+  spring = false;
+  drag = false;
+  sticky = false;
+  combination = false;
+  moving = false;
+  bouncing = false;
 }
 
 void draw() {
@@ -17,11 +23,28 @@ void draw() {
 }
 
 void keyPressed() {
+  if (key == '1') {
+    println(gravity = !gravity);
+  }
+  if (key == '2') {
+    println(spring = !spring);
+  }
+  if (key == '3') {
+    println(drag = !drag);
+  }
+  if (key == '4') {
+    println(sticky = !sticky);
+  }
+  if (key == '5') {
+    println(combination = !combination);
+  }
   if (key == ' ') {
-    println(!gravity);
+    println(moving = !moving);
   }
-
+  if (key == 'b') {
+    println(bouncing = !bouncing);
   }
+}
 
 void toggleDisplay() {
   int txtSz = 27;
