@@ -16,11 +16,11 @@ void setup() {
   combination = false;
   moving = false;
   bouncing = false;
-}
+}//setup
 
 void draw() {
   toggleDisplay();
-}
+}//draw
 
 void keyPressed() {
   if (key == '1') {
@@ -44,7 +44,7 @@ void keyPressed() {
   if (key == 'b') {
     println(bouncing = !bouncing);
   }
-}
+}//keyPressed
 
 void toggleDisplay() {
   int txtSz = 27;
@@ -84,4 +84,4 @@ void toggleDisplay() {
   text(stre, a+b+c+d+2, 0);
   text(strf, a+b+c+d+e+2, 0);
   text(strg, a+b+c+d+e+f+2, 0);
-}
+}//toggleDisplay
