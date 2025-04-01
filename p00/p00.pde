@@ -7,6 +7,11 @@ boolean combination;
 boolean moving;
 boolean bouncing;
 
+int MAX_SIZE = 20;
+int MIN_SIZE = 5;
+int MAX_MASS = 100;
+int MIN_MASS = 20;
+
 void setup() {
   size(800, 800);
   gravity = false;
@@ -47,6 +52,8 @@ void keyPressed() {
 }//keyPressed
 
 void toggleDisplay() {
+  color on = color(0, 255, 0);
+  color off = color(255, 0, 0);
   int txtSz = 27;
   //creating strings
   String stra = "gravity";
@@ -65,14 +72,49 @@ void toggleDisplay() {
   float f = textWidth(strf)+4; //custom (sticky)
   float g = textWidth(strg)+4; //combination
 
-  fill(255);
+  // toggle box
+  if (gravity) {
+    fill(on);
+  } else {
+    fill(off);
+  }
   rect(0, 0, a, txtSz); //gravity
+  if (spring) {
+    fill(on);
+  } else {
+    fill(off);
+  }
   rect(a, 0, b, txtSz); //spring
+  if (drag) {
+    fill(on);
+  } else {
+    fill(off);
+  }
   rect(a+b, 0, c, txtSz); //drag
+  if (sticky) {
+    fill(on);
+  } else {
+    fill(off);
+  }
   rect(a+b+c, 0, d, txtSz); //custom (sticky)
+  if (combination) {
+    fill(on);
+  } else {
+    fill(off);
+  }
   rect(a+b+c+d, 0, e, txtSz); //combination
-  rect(a+b+c+d+e, 0, f, txtSz); //combination
-  rect(a+b+c+d+e+f, 0, g, txtSz); //combination
+  if (moving) {
+    fill(on);
+  } else {
+    fill(off);
+  }
+  rect(a+b+c+d+e, 0, f, txtSz); //moving
+  if (bouncing) {
+    fill(on);
+  } else {
+    fill(off);
+  }
+  rect(a+b+c+d+e+f, 0, g, txtSz); //bouncing
 
   textSize(txtSz);
   textAlign(LEFT, TOP);
