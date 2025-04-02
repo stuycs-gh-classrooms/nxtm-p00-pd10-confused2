@@ -40,10 +40,11 @@ class Orb {
     acceleration.mult(0);
   }//move
 
+/*
 PVector getStickyForce(float q1, float q2, float r) {
  float kConstant = 8.99 * pow(10, 9);
- kConstant * (q1*q2) / pow(r, 2);
- 
+ return kConstant * (q1*q2) / pow(r, 2);
+// return(new PVector(0.0,0.0));
 }//getStickyForce
-
+*/ 
 }//Ball

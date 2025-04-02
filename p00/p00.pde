@@ -11,6 +11,7 @@ int MAX_SIZE = 20;
 int MIN_SIZE = 5;
 int MAX_MASS = 100;
 int MIN_MASS = 20;
+int NUM_ORBS = 2;
 
 void setup() {
   size(800, 800);
@@ -26,6 +27,13 @@ void setup() {
 void draw() {
   toggleDisplay();
 }//draw
+
+void makeOrbs() {
+   Orb[] obs;
+   for ( int i = 0; i < NUM_ORBS; i++) {
+//     Orb[i] = newOrb();
+   }
+}
 
 void keyPressed() {
   if (key == '1') {
