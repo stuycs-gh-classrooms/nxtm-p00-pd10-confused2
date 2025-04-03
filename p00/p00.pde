@@ -7,11 +7,12 @@ boolean combination;
 boolean moving;
 boolean bouncing;
 
-int MAX_SIZE = 20;
-int MIN_SIZE = 5;
+int MAX_SIZE = 100;
+int MIN_SIZE = 50;
 int MAX_MASS = 100;
 int MIN_MASS = 20;
-int NUM_ORBS = 2;
+int NUM_ORBS = 3;
+Orb[] orbs = new Orb[NUM_ORBS];
 
 void setup() {
   size(800, 800);
@@ -22,17 +23,25 @@ void setup() {
   combination = false;
   moving = false;
   bouncing = false;
+  makeOrbs();
 }//setup
 
 void draw() {
   toggleDisplay();
+  //displaying all orbs
+  for (int i = 0; i < NUM_ORBS; i++) {
+    orbs[i].display();
+  }
+  
 }//draw
 
 void makeOrbs() {
-   Orb[] obs;
-   for ( int i = 0; i < NUM_ORBS; i++) {
-//     Orb[i] = newOrb();
-   }
+  Orb o0 = new Orb(width/2, height/2, 200, 50); //creating fixed orb
+  orbs[0] = o0; //storing fixed orb
+  //creating non-fixed orbs
+  for(int i = 1; i < NUM_ORBS; i++) {
+   orbs[i] = new Orb(); 
+  }
 }
 
 void keyPressed() {
